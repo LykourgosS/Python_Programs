@@ -6,11 +6,11 @@ while flag!="n":
     data = urllib.urlopen(url).read()
     output = json.loads(data)
     #styles=[]
-    print "Styles of Beers:\n"
+    print "Styles of Beer:\n"
     for i in range(len(output["data"])):
         #styles.append(output["data"][i]["name"].encode('ascii','ignore'))
         print output["data"][i]["id"],". ",output["data"][i]["name"]
-    print "\nChoose one of the beer categories above (1-",(i+1),")"
+    print "\nChoose one of the beer styles above (1-",(i+1),")"
     style=int(raw_input())
     url ="http://api.brewerydb.com/v2/beers?key=df245f7b047257e9a006d0ff484c5b88&format=json&styleId="+str(style)
     #print url
